@@ -40,17 +40,6 @@ const experiences = [
     `,
   },
   {
-    title: "Competitive Engineering Fellowship",
-    company: "Africa to Silicon Valley (A2SV) · Generation 5",
-    companyUrl: "https://www.a2sv.org",
-    period: "2023 · Selected from thousands",
-    contributions: `
-* Selected from **thousands of applicants** as one of Africa's top engineering talents in a competitive selection.
-* Solved **700+ LeetCode and Codeforces problems** training to compete at the global level.
-* Placed into the Eskalate engineering team coming out of the program.
-    `,
-  },
-  {
     title: "Fullstack Engineer",
     company: "NEO AI Technologies",
     companyUrl: "#",

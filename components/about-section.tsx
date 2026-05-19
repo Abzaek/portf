@@ -4,16 +4,16 @@ import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 
 const STAT_BLOCKS = [
-  { value: "7", label: "Products Shipped" },
   { value: "4 yrs", label: "Pro Experience" },
+  { value: "7", label: "Products Shipped" },
+  { value: "9", label: "OSS Contributions" },
   { value: "3", label: "Languages" },
-  { value: "700+", label: "Problems Solved" },
 ];
 
 const CHIPS = [
   { k: "EXPERIENCE", v: "4 YRS" },
-  { k: "GPA", v: "3.9 / 4.0" },
-  { k: "INSTITUTE", v: "AAiT" },
+  { k: "OSS_CONTRIB", v: "9 REPOS" },
+  { k: "SHIPPED", v: "7 SYSTEMS" },
   { k: "STATUS", v: "OPEN_FOR_BUILDS" },
 ];
 
@@ -55,40 +55,38 @@ export function AboutSection() {
               MODULE_ID: 0xAB_BIO
             </div>
             <h3 className="font-display text-2xl font-semibold tracking-[-0.02em] text-noir-text mb-5">
-              Recent grad. Already shipping.
+              Senior engineer. Open-source contributor.
             </h3>
 
             <div className="space-y-4 text-noir-text-soft leading-relaxed">
               <p>
-                Selected from thousands as one of{" "}
-                <span className="text-noir-accent font-semibold">
-                  Africa's top engineering talents
-                </span>{" "}
-                through a competitive engineering fellowship that trains
-                students to compete at the global level. Came out of it with
-                700+ LeetCode and Codeforces problems solved and an
-                internship at Eskalate, where I led a small team building a
-                Go-based blog platform.
+                Full-stack engineer with four years of production experience
+                across <span className="text-noir-accent font-semibold">Go</span>,{" "}
+                <span className="text-noir-accent font-semibold">Python</span>, and{" "}
+                <span className="text-noir-accent font-semibold">TypeScript</span>.
+                Contributor to a stack of major open-source projects:{" "}
+                <span className="text-noir-accent font-semibold">buildkit</span>,{" "}
+                <span className="text-noir-accent font-semibold">atlantis</span>,{" "}
+                <span className="text-noir-accent font-semibold">watermill</span>,{" "}
+                <span className="text-noir-accent font-semibold">listmonk</span>,{" "}
+                <span className="text-noir-accent font-semibold">bbolt</span>,
+                and more. When I find something worth fixing in a tool I
+                build with, I send the patch upstream.
               </p>
               <p>
-                Graduated with a{" "}
-                <span className="text-noir-accent font-semibold">
-                  3.9 / 4.0 GPA
-                </span>{" "}
-                from{" "}
-                <span className="text-noir-accent font-semibold">
-                  Addis Ababa Institute of Technology
-                </span>
-                , Ethiopia's premier engineering school.
+                Currently at{" "}
+                <span className="text-noir-accent font-semibold">Reisearch</span>{" "}
+                on a small engineering team building a real estate investment
+                platform. My ownership: the comps orchestration system, the AI
+                Renovation Copilot, and the 9.6M-record market data pipeline.
+                Designed those end to end. Co-led an AWS architecture redesign
+                that cut infrastructure costs 40%, and introduced typing and
+                test tooling that dropped production bugs 30%.
               </p>
               <p>
-                Now at Reisearch on a small engineering team building the
-                real estate investment platform. My ownership: the comps
-                orchestration system, the AI Renovation Copilot, and the
-                9.6M-record market data pipeline. Designed those end to end.
-                Plus contributions to the broader frontend, API, and AWS
-                architecture work, and mentorship of other engineers on
-                Clean Architecture practices.
+                I architect systems that scale, mentor engineers on Clean
+                Architecture and AWS, and ship the code rather than write
+                slides about it.
               </p>
               <p className="font-display font-semibold text-noir-text">
                 I don't just write code. I ship products that people use.

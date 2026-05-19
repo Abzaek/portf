@@ -4,8 +4,6 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/theme-provider";
-import { AudioProvider } from "@/components/audio-provider";
-import { AudioConsentBanner } from "@/components/audio-consent-banner";
 import "./globals.css";
 
 // Stellar Blueprint typography:
@@ -118,19 +116,16 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <AudioProvider>
-            {children}
-            {/* Stellar Blueprint — viewport corner crop markers (decorative) */}
-            <div aria-hidden className="pointer-events-none fixed inset-0 z-[60]">
-              <span className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-noir-accent-bright/40" />
-              <span className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-noir-accent-bright/40" />
-              <span className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-noir-accent-bright/40" />
-              <span className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-noir-accent-bright/40" />
-            </div>
-            <AudioConsentBanner />
-            <Toaster />
-            <Analytics />
-          </AudioProvider>
+          {children}
+          {/* Stellar Blueprint — viewport corner crop markers (decorative) */}
+          <div aria-hidden className="pointer-events-none fixed inset-0 z-[60]">
+            <span className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-noir-accent-bright/40" />
+            <span className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-noir-accent-bright/40" />
+            <span className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-noir-accent-bright/40" />
+            <span className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-noir-accent-bright/40" />
+          </div>
+          <Toaster />
+          <Analytics />
         </ThemeProvider>
       </body>
       <GoogleAnalytics gaId="G-PRMYJQGP5Z" />

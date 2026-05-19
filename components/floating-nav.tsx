@@ -8,11 +8,11 @@ import { Menu, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "next-themes";
 
 import { useMobile } from "@/hooks/use-mobile";
-import { AudioToggle } from "@/components/audio-toggle";
 
 const NAV_ITEMS = [
   { name: "About", href: "#about" },
   { name: "Projects", href: "#projects" },
+  { name: "Open Source", href: "#oss" },
   { name: "Stack", href: "#skills" },
   { name: "Services", href: "#services" },
   { name: "Contact", href: "#contact" },
@@ -21,10 +21,11 @@ const NAV_ITEMS = [
 // Stellar Blueprint label-caps style: Space Grotesk, 12px, weight 700, tracking 0.1em, uppercase.
 const LABEL_CAPS = "font-display text-[12px] font-bold tracking-[0.1em] uppercase";
 
-/** "Services" → "[ 01_SERVICES ]" — Stellar Blueprint nav-link semantics. */
+/** "Services" → "[ 01_SERVICES ]" — Stellar Blueprint nav-link semantics.
+ * Multi-word names join with underscores: "Open Source" → "[ 03_OPEN_SOURCE ]". */
 function blueprintLabel(index: number, name: string) {
   const num = String(index + 1).padStart(2, "0");
-  return `[ ${num}_${name.toUpperCase()} ]`;
+  return `[ ${num}_${name.toUpperCase().replace(/\s+/g, "_")} ]`;
 }
 
 export function FloatingNav() {
@@ -103,7 +104,7 @@ export function FloatingNav() {
 
           {/* Desktop nav — bracket-syntax label-caps with section numbers */}
           {!isMobile && (
-            <div className="flex items-center gap-5 lg:gap-6">
+            <div className="flex items-center gap-4 lg:gap-5">
               {NAV_ITEMS.map((item, index) => {
                 const id = item.href.replace("#", "");
                 const isActive = activeSection === id;
@@ -112,7 +113,7 @@ export function FloatingNav() {
                     key={item.name}
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className={`${LABEL_CAPS} pb-1 border-b-2 transition-[color,border-color,transform] duration-150 active:scale-95 ${
+                    className={`${LABEL_CAPS} pb-1 border-b-2 whitespace-nowrap shrink-0 transition-[color,border-color,transform] duration-150 active:scale-95 ${
                       isActive
                         ? "text-noir-accent border-noir-accent"
                         : "text-noir-text-soft border-transparent hover:text-noir-accent-bright"
@@ -128,7 +129,6 @@ export function FloatingNav() {
           {/* Right side: theme toggle + Hire Me CTA (desktop) or menu toggle (mobile) */}
           {!isMobile ? (
             <div className="flex items-center gap-2 shrink-0">
-              <AudioToggle />
               <ThemeToggle />
               <a
                 href="#network"
@@ -140,7 +140,6 @@ export function FloatingNav() {
             </div>
           ) : (
             <div className="flex items-center gap-2 shrink-0">
-              <AudioToggle />
               <ThemeToggle />
               <button
                 type="button"

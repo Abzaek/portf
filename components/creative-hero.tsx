@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const STAT_TOKENS = [
   { num: "4 yrs", label: "PRO_EXPERIENCE" },
   { num: "7", label: "SHIPPED_SYSTEMS" },
-  { num: "3", label: "LANGUAGES" },
+  { num: "9", label: "OSS_CONTRIBUTIONS" },
   { num: "9.6M", label: "RECORDS_INGESTED" },
   { num: "40%", label: "INFRA_COST_DOWN" },
 ];
@@ -38,8 +38,8 @@ export function CreativeHero() {
             <span className="text-noir-accent">4 Years In.</span>{" "}
             7 Products Shipped.
             <br className="hidden md:block" />{" "}
-            <span className="text-noir-accent">3 Languages.</span>{" "}
-            700+ Problems Solved.
+            <span className="text-noir-accent">9 OSS Contributions.</span>{" "}
+            3 Languages.
           </motion.h1>
 
           {/* Outcome-focused body */}
