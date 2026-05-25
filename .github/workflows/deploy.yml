@@ -1,0 +1,23 @@
+name: Deploy to abzaek.dev
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        uses: appleboy/ssh-action@v1
+        with:
+          host: 141.147.25.237
+          username: ubuntu
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          script: |
+            export PATH=$HOME/.hermes/node/bin:$PATH
+            cd ~/apps/portf
+            git pull origin main
+            npm install --production
+            npm run build
+            systemctl --user restart portf
