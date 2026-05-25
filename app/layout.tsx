@@ -132,4 +132,3 @@ export default function RootLayout({
     </html>
   );
 }
-<!-- deployed via CI/CD -->
